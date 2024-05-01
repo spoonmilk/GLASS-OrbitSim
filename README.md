@@ -12,7 +12,7 @@ As proposed in GLASS' mission-spec, the payload-carrying sail is propulsed throu
 
 As we make a burn (or as the laser is shot at the probe) the probe's apogee increases, but its perigee decreases. The issue here is that, without enoguh stations to boost the probe, the perigee's altitude decrease will literally slam the satellite back to Earth. Our central research question is optimizing the number of ground stations such that the orbit can be continually boosted while avoiding the failure scenario described. 
 
-# Compromises
+<!-- # Compromises -->
 <!-- TODO: Fill in info about prograde compromise burn -->
 
 
