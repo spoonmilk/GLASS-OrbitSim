@@ -17,10 +17,23 @@ import plotly.io as pio
 pio.renderers.default = "plotly_mimetype+notebook_connected"
 from astropy.coordinates import solar_system_ephemeris
 
+# Set up time frame
 epoch = Time("2024-05-01 13:05:50", scale = "tdb")
 
+# Basic orbit set up
 plotter = OrbitPlotter(plane=Planes.EARTH_ECLIPTIC)
 plotter.plot_body_orbit(Earth, epoch, label = "Earth")
 plotter.plot_body_orbit(Moon, epoch, label = "Moon")
 
+# Basic satellite object setup
+satellite = Ephem.from_horizons(
+    "Sample Satellite",
+    epochs = time_range(epoch, end = epoch + 30 * u.day),
+    attractor = Earth,
+    plane = Planes.EARTH_ECLIPTIC,
+    id_type = "majorbody",
+) 
+satellite
 
+# plot satellite
+plotter.plot_ephem(satellite, epoch, label = "Sample Satellite", color = "green")
